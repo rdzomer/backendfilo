@@ -1,4 +1,5 @@
 const fs = require("fs");
 
-const cred = JSON.parse(fs.readFileSync("credentials.json", "utf8"));
-console.log(JSON.stringify(cred));
+const raw = fs.readFileSync("credentials.json", "utf-8");
+const escaped = JSON.stringify(JSON.parse(raw));
+console.log(escaped);
